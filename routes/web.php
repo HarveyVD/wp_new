@@ -24,7 +24,7 @@ Route::any('update_xml', function(){
     $items = $root->getElementsByTagName('item');
 
     foreach ($items as $item) {
-        if (!checkNode($item)) {
+        if (checkNode($item)) {
             $nodesToDelete[] = $item;
             continue;
         }
